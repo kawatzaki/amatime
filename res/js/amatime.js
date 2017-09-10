@@ -40,6 +40,13 @@ var Vju = new Vue({
 		},
 		selectYear: function(year) {
 			this.form.year = year;
+		},
+		scrollDay: function(target) {
+			console.log($('#day-list').scrollTop());
+			$('#day-list').scrollTop($('#day-list').top + $('#day-list li:nth-child(14)').position().top);
 		}
+	},
+	mounted: function() {
+		this.scrollDay(17);
 	}
 });
