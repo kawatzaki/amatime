@@ -24,6 +24,22 @@ var Vju = new Vue({
 			'December'
 		],
 		days: days,
-		years: years
+		years: years,
+		form: {
+			month: '',
+			day: '',
+			year: ''
+		}
+	},
+	methods: {
+		selectMonth: function(month) {
+			this.form.month = month;
+		},
+		selectDay: function(day) {
+			this.form.day = day;
+		},
+		selectYear: function(year) {
+			this.form.year = year;
+		}
 	}
 });

@@ -12,21 +12,29 @@
 	<div id="container">
 		<div id="month">
 			<ul>
-				<li v-for="month in months">
+				<li v-for="month in months"
+				@click="selectMonth(month)"
+				:class="(form.month == month) ? 'selected' : ''"
+				>
 					{{ month }}
 				</li>
 			</ul>
 		</div>
 		<div id="day">
 			<ul>
-				<li v-for="day in days">
+				<li v-for="day in days"
+				@click="selectDay(day)"
+				:class="(form.day == day) ? 'selected' : ''"
+				>
 					{{ day }}
 				</li>
 			</ul>
 		</div>
 		<div id="year">
 			<ul>
-				<li v-for="year in years">
+				<li v-for="year in years"
+				@click="selectYear(year)"
+				:class="(form.year == year) ? 'selected' : ''">
 					{{ year }}
 				</li>
 			</ul>
