@@ -5,39 +5,54 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Amatime</title>
 	<link rel="stylesheet" href="res/css/style.css">
+	<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css">
 	<script src="res/js/vue.js" charset="utf-8"></script>
 
 </head>
 <body>
 	<div id="container">
-		<div id="month">
-			<ul>
-				<li v-for="month in months"
-				@click="selectMonth(month)"
-				:class="(form.month == month) ? 'selected' : ''"
-				>
-					{{ month }}
-				</li>
-			</ul>
+		<div id="date">
+			<div id="month">
+				<ul class="left">
+					<li v-for="month in months"
+					@click="selectMonth(month)"
+					:class="(form.month == month) ? 'selected' : ''"
+					>
+						{{ month }}
+					</li>
+				</ul>
+			</div>
+			<div id="day">
+				<ul class="middle">
+					<li v-for="day in days"
+					@click="selectDay(day)"
+					:class="(form.day == day) ? 'selected' : ''"
+					>
+						{{ day }}
+					</li>
+				</ul>
+			</div>
+			<div id="year">
+				<ul class="right">
+					<li v-for="year in years"
+					@click="selectYear(year)"
+					:class="(form.year == year) ? 'selected' : ''">
+						{{ year }}
+					</li>
+				</ul>
+			</div>
 		</div>
-		<div id="day">
-			<ul>
-				<li v-for="day in days"
-				@click="selectDay(day)"
-				:class="(form.day == day) ? 'selected' : ''"
-				>
-					{{ day }}
-				</li>
-			</ul>
+	</div>
+	<div id="buttons">
+		<div class="ok">
+			<a>
+				<i class="fa fa-check" aria-hidden="true"></i>
+			</a>
 		</div>
-		<div id="year">
-			<ul>
-				<li v-for="year in years"
-				@click="selectYear(year)"
-				:class="(form.year == year) ? 'selected' : ''">
-					{{ year }}
-				</li>
-			</ul>
+		<div class="cancel">
+			<a>
+				<i class="fa fa-times" aria-hidden="true"></i>
+			</a>
 		</div>
 	</div>
 	<script src="res/js/amatime.js" charset="utf-8"></script>
