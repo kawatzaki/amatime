@@ -3,19 +3,31 @@ body {
 	font-family: sans-serif;
 }
 
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+li {
+	padding: 1em;
+}
+
 #container {
-	max-width: 25%;
-	max-height: 40%;
+	height: 15em;
 	background-color: green;
+	display: inline-flex;
 }
 
 #month {
 	max-widt%: 60%;
-	display: inline-block;
+	overflow-y: auto;
 }
 #day {
 	max-widt%: 20%;
+	overflow-y: auto;
 }
 #year {
 	max-widt%: 20%;
+	overflow-y: auto;
 }
