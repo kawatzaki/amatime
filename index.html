@@ -11,26 +11,28 @@
 </head>
 <body>
 	<div id="container">
-		<div id="control">
+		<div id="control"
+		@click="toggleShow()">
 			<div id="month-control">
 				<label>
-					Month
+					{{ form.month }}
 				</label>
 			</div>
 			<div id="day-control">
-				<label  class="center">
-					Day
+				<label
+				class="center">
+					{{ form.day }}
 				</label>
 			</div>
 			<div id="year-control">
 				<label  class="center">
-					Year
+					{{ form.year }}
 				</label>
 			</div>
 		</div>
-		<div id="date">
+		<div v-if="show" id="date">
 			<div id="month">
-				<ul class="left">
+				<ul class="left" id="month-list">
 					<li v-for="month in months"
 					@click="selectMonth(month)"
 					:class="(form.month == month) ? 'selected' : ''"
@@ -50,7 +52,7 @@
 				</ul>
 			</div>
 			<div id="year">
-				<ul class="right">
+				<ul class="right" id="year-list">
 					<li v-for="year in years"
 					@click="selectYear(year)"
 					:class="(form.year == year) ? 'selected' : ''">
@@ -59,7 +61,7 @@
 				</ul>
 			</div>
 		</div>
-		<div id="buttons">
+		<div v-if="show" id="buttons">
 			<div class="ok">
 				<a>
 					<i class="fa fa-check" aria-hidden="true"></i>
