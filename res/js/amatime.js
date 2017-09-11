@@ -42,11 +42,17 @@ var Vju = new Vue({
 			this.form.year = year;
 		},
 		scrollDay: function(target) {
-			console.log($('#day-list').scrollTop());
-			$('#day-list').scrollTop($('#day-list').top + $('#day-list li:nth-child(14)').position().top);
+			if (target > -1 && target < 31)
+			{
+				var li = 
+						$('#day-list li:nth(' + target +')');
+						sTop = $('#day').scrollTop(li.position().top);
+						sTop = li.scrollTop();
+						console.log(sTop);
+			}
 		}
 	},
 	mounted: function() {
-		this.scrollDay(17);
+		this.scrollDay(0);
 	}
 });
